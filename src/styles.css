@@ -4,3 +4,9 @@ ul {
 .search-form {
   margin: 20px;
 }
+.source-code {
+  font-size: smaller;
+}
+.coder-name {
+  font-size: smaller;
+}
