@@ -34,20 +34,25 @@
             </div>
           </div>
         </form>
-        <h1>Saint-Ismier, France</h1>
-        <ul>
+        <h1>Paris, France</h1>
+        <ul class="day-weather">
           <li id="dateTime">Tuesday 12:00</li>
           <li>Sunny</li>
         </ul>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Sunny icon"
-              class="weather-icon"
-            />
-            <span class="temperature">19 </span
-            ><span class="units">℃ | <a href="#">ºF</a></span>
+            <div class="d-flex weather-temperature">
+              <img
+                src="images/sun.png"
+                alt="Clear"
+                class="weather-icon"
+                id="icon"
+              />
+              <div class="float-left">
+                <span class="temperature" id="temperature-now">19 </span
+                ><span class="units">℃ | <a href="#">ºF</a></span>
+              </div>
+            </div>
           </div>
           <div class="col-6">
             <ul>
@@ -56,6 +61,45 @@
               <li>Wind: 2 km/h</li>
             </ul>
           </div>
+          <div class="row day">
+        <div class="col-2">
+          Tuesday
+          <div class="row pic">
+            <div class="col-2">
+            <img src="images/rain.png" alt="sunny" width="70">
+          </div>
+        </div>
+        </div>
+        <div class="col-2">
+           Wednesday
+           <div class="row-pic">
+              <div class="col-2">
+              <img src="images/cloudy.png" alt="cloud-sun" width="70">
+            </div>
+          </div>
+          </div>
+          <div class="col-2">
+              Thursday
+              <div class="row-pic">
+                  <div class="col-2">
+                  <img src="images/lightrain.png" alt="rain" width="70">
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+                Friday
+                <div class="row-pic">
+                    <div class="col-2">
+                    <img src="images/sun.png" alt="cloud" width="70">
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                  Saturday
+                  <div class="row-pic">
+                      <div class="col-2">
+                      <img src="images/sun.png" alt="cloud-sun" width="70">
+                    </div>
         </div>
       </div>
       <a

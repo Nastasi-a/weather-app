@@ -10,3 +10,30 @@ ul {
 .coder-name {
   font-size: smaller;
 }
+.weather-app {
+  max-width: 700px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding-left: 30px;
+  margin-top: 20px;
+  background-color: rgba(39, 113, 219, 0.03);
+  padding-bottom: 15px;
+}
+h1 {
+  margin-left: 30px;
+  color: #2771db;
+}
+.weather-temperature {
+  margin-left: 25px;
+}
+.weather-icon {
+  width: 90px;
+}
+.float-left {
+  font-size: 25px;
+  font-weight: 500;
+}
+.col-2 {
+  margin-right: 20px;
+}
