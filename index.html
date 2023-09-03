@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
   </head>
   <body>
     <div class="container">
@@ -36,14 +37,14 @@
         </form>
         <h1>Paris, France</h1>
         <ul class="day-weather">
-          <li id="dateTime">Tuesday 12:00</li>
-          <li>Sunny</li>
+          <li id="dateTime">Last updated:</li>
+          <li id = "description"></li>
         </ul>
         <div class="row">
           <div class="col-6">
             <div class="d-flex weather-temperature">
               <img
-                src="images/sun.png"
+                src=""
                 alt="Clear"
                 class="weather-icon"
                 id="icon"
@@ -56,9 +57,9 @@
           </div>
           <div class="col-6">
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 77%</li>
-              <li>Wind: 2 km/h</li>
+            
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
           <div class="row day">
@@ -105,11 +106,9 @@
       <a
         href="https://github.com/Nastasi-a/weather-app"
         target="_blank"
-        class="source-code"
-        >Open-sourced code</a
-      >
-      <span class="coder-name">by Anastasiia Burtseva</span>
+        class="source-code">Open-sourced code</a>
     </div>
+    <span class="coder-name">by Anastasiia Burtseva</span>
     <script src="src/app.js"></script>
   </body>
 </html>

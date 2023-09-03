@@ -38,7 +38,22 @@ function temp(response) {
   let temperature = Math.round(response.data.main.temp);
   let nowTemp = document.querySelector(".temperature");
   nowTemp.innerHTML = `${temperature}`;
+
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+let apiKey = "6ae729a4da875ca4234e46786818bbb2";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);
 
 function showPosition(position) {
   console.log(position);
