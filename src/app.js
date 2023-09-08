@@ -18,6 +18,35 @@ let sec = now.getSeconds();
 console.log(`Today is ${newDay}, ${hours}:${minutes}:${sec}`);
 dateTime.innerHTML = `${newDay}, ${hours}:${minutes}`;
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  console.log(response.data.daily);
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayCity(event) {
   event.preventDefault();
   let showCity = document.querySelector("#city-search").value;
@@ -30,6 +59,13 @@ function searchCity(city) {
   let apiKey = "6ae729a4da875ca4234e46786818bbb2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(temp);
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 function temp(response) {
   console.log(response);
@@ -50,10 +86,11 @@ function temp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 let apiKey = "6ae729a4da875ca4234e46786818bbb2";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
+axios.get(apiUrl).then(temp);
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
@@ -75,4 +112,5 @@ function showPosition(position) {
   console.log(apiUrl);
   axios.get(apiUrl).then(temp);
 }
+
 navigator.geolocation.getCurrentPosition(showPosition);
